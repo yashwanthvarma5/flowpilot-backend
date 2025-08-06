@@ -7,7 +7,8 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT;
+
 
 app.post("/slack", async (req, res) => {
   const { text, user_name } = req.body;
@@ -29,3 +30,4 @@ app.post("/slack", async (req, res) => {
 app.listen(PORT, () => {
   console.log(`🚀 FlowPilot backend listening on port ${PORT}`);
 });
+
